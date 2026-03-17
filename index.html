@@ -131,6 +131,19 @@ tailwind.config = {
     margin-top: 5px;
   }
 
+  .venue-link {
+    color: #2c3822;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: rgba(58,85,40,0.3);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s, color 0.2s;
+  }
+  .venue-link:hover {
+    color: #3a5528;
+    text-decoration-color: #3a5528;
+  }
+
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #cdd4b9; }
   ::-webkit-scrollbar-thumb { background: #9ab37e; border-radius: 4px; }
@@ -200,7 +213,7 @@ tailwind.config = {
 <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
 
   <!-- Sky gradient background -->
-  <div class="absolute inset-0" style="background: linear-gradient(180deg, #87CEEB 0%, #a8d8ea 25%, #b8c9a0 45%, #cdd4b9 60%, #cdd4b9 100%);"></div>
+  <div class="absolute inset-0" style="background: linear-gradient(180deg, #1a1a2e 0%, #16213e 8%, #0f3460 16%, #533483 26%, #e94560 36%, #f5a623 44%, #f7c948 50%, #e8c170 56%, #cdd4b9 68%, #cdd4b9 100%);"></div>
 
   <!-- Vineyard hills SVG illustration -->
   <svg class="absolute bottom-0 left-0 w-full" style="height: 45%;" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -242,37 +255,37 @@ tailwind.config = {
 
   <!-- Hero content -->
   <div class="relative z-10 max-w-4xl" style="margin-top: -8%;">
-    <p class="animate-fade-in-up stagger-1 font-body text-sm md:text-base tracking-[0.3em] uppercase mb-6" style="color: #3b4a2e;">June 18 - 21, 2026 &middot; Sonoma Wine Country</p>
-    <h1 class="animate-fade-in-up stagger-2 font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] mb-3 font-semibold" style="color: #2c3822; letter-spacing: 0.04em;">
-      Chateau Datla
+    <p class="animate-fade-in-up stagger-1 font-body text-sm md:text-base tracking-[0.3em] uppercase mb-6" style="color: rgba(255,255,255,0.85);">June 18 - 21, 2026 &middot; Sonoma Wine Country</p>
+    <h1 class="animate-fade-in-up stagger-2 font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] mb-3 font-semibold" style="color: #ffffff; letter-spacing: 0.08em; text-shadow: 0 2px 20px rgba(0,0,0,0.3);">
+      CHATEAU DATLA
     </h1>
-    <p class="animate-fade-in-up stagger-3 font-display text-2xl sm:text-3xl md:text-4xl italic mb-4" style="color: #4d613a;">Manasa's Bachelorette Party</p>
+    <p class="animate-fade-in-up stagger-3 font-display text-2xl sm:text-3xl md:text-4xl italic mb-4" style="color: rgba(255,255,255,0.9);">Manasa's Bachelorette Party</p>
     <div class="animate-fade-in-up stagger-3 flex items-center justify-center gap-3 mb-10">
-      <div class="h-px w-12" style="background: #7d9a5e;"></div>
-      <svg class="w-5 h-5" style="color: #5e8240;" viewBox="0 0 24 24" fill="currentColor"><path d="M7.5 7.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5c0 2.5-2.5 4.5-2.5 4.5s-2.5-2-2.5-4.5zm3 10.5l-1-1.5h-5l3-4.5 2 3 3-4.5 3 4.5h-5z"/></svg>
-      <div class="h-px w-12" style="background: #7d9a5e;"></div>
+      <div class="h-px w-12" style="background: rgba(255,255,255,0.5);"></div>
+      <svg class="w-5 h-5" style="color: rgba(255,255,255,0.7);" viewBox="0 0 24 24" fill="currentColor"><path d="M7.5 7.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5c0 2.5-2.5 4.5-2.5 4.5s-2.5-2-2.5-4.5zm3 10.5l-1-1.5h-5l3-4.5 2 3 3-4.5 3 4.5h-5z"/></svg>
+      <div class="h-px w-12" style="background: rgba(255,255,255,0.5);"></div>
     </div>
-    <p class="animate-fade-in-up stagger-4 text-lg md:text-xl font-light mb-12" style="color: #4d613a;">Four days of wine, sun, and good times in wine country.</p>
+    <p class="animate-fade-in-up stagger-4 text-lg md:text-xl font-light mb-12" style="color: rgba(255,255,255,0.85);">Four days of wine, sun, and good times in wine country.</p>
 
     <div class="animate-fade-in-up stagger-5 flex flex-wrap justify-center gap-4 md:gap-8 mb-16">
       <div class="text-center">
-        <span id="cd-days" class="font-display text-5xl md:text-6xl block font-semibold" style="color: #2c3822;">--</span>
-        <span class="text-xs tracking-[0.2em] uppercase" style="color: #4d613a;">Days</span>
+        <span id="cd-days" class="font-display text-5xl md:text-6xl block font-semibold" style="color: #ffffff;">--</span>
+        <span class="text-xs tracking-[0.2em] uppercase" style="color: rgba(255,255,255,0.7);">Days</span>
       </div>
-      <div class="font-display text-5xl md:text-6xl" style="color: #9ab37e;">&middot;</div>
+      <div class="font-display text-5xl md:text-6xl" style="color: rgba(255,255,255,0.4);">&middot;</div>
       <div class="text-center">
-        <span id="cd-hours" class="font-display text-5xl md:text-6xl block font-semibold" style="color: #2c3822;">--</span>
-        <span class="text-xs tracking-[0.2em] uppercase" style="color: #4d613a;">Hours</span>
+        <span id="cd-hours" class="font-display text-5xl md:text-6xl block font-semibold" style="color: #ffffff;">--</span>
+        <span class="text-xs tracking-[0.2em] uppercase" style="color: rgba(255,255,255,0.7);">Hours</span>
       </div>
-      <div class="font-display text-5xl md:text-6xl" style="color: #9ab37e;">&middot;</div>
+      <div class="font-display text-5xl md:text-6xl" style="color: rgba(255,255,255,0.4);">&middot;</div>
       <div class="text-center">
-        <span id="cd-mins" class="font-display text-5xl md:text-6xl block font-semibold" style="color: #2c3822;">--</span>
-        <span class="text-xs tracking-[0.2em] uppercase" style="color: #4d613a;">Minutes</span>
+        <span id="cd-mins" class="font-display text-5xl md:text-6xl block font-semibold" style="color: #ffffff;">--</span>
+        <span class="text-xs tracking-[0.2em] uppercase" style="color: rgba(255,255,255,0.7);">Minutes</span>
       </div>
-      <div class="font-display text-5xl md:text-6xl" style="color: #9ab37e;">&middot;</div>
+      <div class="font-display text-5xl md:text-6xl" style="color: rgba(255,255,255,0.4);">&middot;</div>
       <div class="text-center">
-        <span id="cd-secs" class="font-display text-5xl md:text-6xl block font-semibold" style="color: #2c3822;">--</span>
-        <span class="text-xs tracking-[0.2em] uppercase" style="color: #4d613a;">Seconds</span>
+        <span id="cd-secs" class="font-display text-5xl md:text-6xl block font-semibold" style="color: #ffffff;">--</span>
+        <span class="text-xs tracking-[0.2em] uppercase" style="color: rgba(255,255,255,0.7);">Seconds</span>
       </div>
     </div>
 
@@ -297,35 +310,32 @@ tailwind.config = {
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl font-semibold" style="color: #3a5528;">Thursday</span>
           <p class="text-sm mt-1" style="color: #637c49;">June 18</p>
-          <p class="font-medium mt-1" style="color: #2c3822;">Arrival Day</p>
+          <p class="font-medium mt-1" style="color: #2c3822;">Arrival &middot; Spa &middot; Dinner</p>
         </div>
-        <div class="flex-1 space-y-4">
-          <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #5e8240;"></div>
-            <div>
-              <p class="font-medium" style="color: #2c3822;">Arrive at the AirBnb</p>
-              <p class="text-sm" style="color: #4d613a;">Settle in, unpack, and get the lay of the land.</p>
-            </div>
-          </div>
+        <div class="flex-1 space-y-2">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Late Afternoon</p>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #f2b5a0;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Spa Day</p>
-              <p class="text-sm" style="color: #4d613a;">Start the weekend right with some relaxation.</p>
+              <p class="font-medium" style="color: #2c3822;">Spa Day in Town + Pool Hangs</p>
+              <p class="text-sm" style="color: #4d613a;">Totally optional based on your flights. Settle in, unwind, and soak up the Sonoma sun.</p>
+            </div>
+          </div>
+          <div class="pt-3">
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Evening</p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="activity-dot mt-1.5" style="background: #3a5528;"></div>
+            <div>
+              <p class="font-medium" style="color: #2c3822;">Private Dinner at the House</p>
+              <p class="text-sm" style="color: #4d613a;">We can get a chef or we can cook; open to group feedback!</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Pool Hangs</p>
-              <p class="text-sm" style="color: #4d613a;">Soak up the Sonoma sun by the pool.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #3a5528;"></div>
-            <div>
-              <p class="font-medium" style="color: #2c3822;">Dinner</p>
-              <p class="text-sm" style="color: #4d613a;">First group dinner together to kick things off.</p>
+              <p class="font-medium" style="color: #2c3822;">Drinking Games &amp; Casual Hangs</p>
+              <p class="text-sm" style="color: #4d613a;">Kick things off the right way.</p>
             </div>
           </div>
         </div>
@@ -338,34 +348,63 @@ tailwind.config = {
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl font-semibold" style="color: #3a5528;">Friday</span>
           <p class="text-sm mt-1" style="color: #637c49;">June 19</p>
-          <p class="font-medium mt-1" style="color: #2c3822;">Wine &amp; Redwoods</p>
+          <p class="font-medium mt-1" style="color: #2c3822;">Hike &middot; Wine &middot; Dinner</p>
         </div>
-        <div class="flex-1 space-y-4">
+        <div class="flex-1 space-y-2">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Morning / Early Afternoon</p>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #3a5528;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Hiking at Armstrong Redwoods</p>
-              <p class="text-sm" style="color: #4d613a;">Morning hike through towering old-growth redwoods. Stunning and only 20 minutes away.</p>
+              <p class="font-medium" style="color: #2c3822;"><a href="https://www.parks.ca.gov/?page_id=450" target="_blank" rel="noopener noreferrer" class="venue-link">Armstrong Redwoods</a></p>
+              <p class="text-sm" style="color: #4d613a;">Easy hike through towering old-growth redwoods. Early wake-up for anyone inclined; only 20 minutes away.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="activity-dot mt-1.5" style="background: #5e8240;"></div>
+            <div>
+              <p class="font-medium" style="color: #2c3822;">Large Brunch</p>
+              <p class="text-sm" style="color: #4d613a;">Fuel up before the afternoon tastings.</p>
+            </div>
+          </div>
+          <div class="pt-3">
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Afternoon &middot; Wine Tasting</p>
+            <p class="text-xs italic mb-3" style="color: #7d9a5e;">Illustrative; still waiting for reservation windows to open</p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
+            <div>
+              <p class="font-medium" style="color: #2c3822;">12:30 - 2:00 pm &middot; <a href="https://www.aperture-cellars.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Aperture Cellars</a></p>
+              <p class="text-sm" style="color: #4d613a;">Bordeaux-style wines in a stunning gallery lounge where wine and art collide.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Winery Tours</p>
-              <p class="text-sm" style="color: #4d613a;">Afternoon tastings at some of Sonoma's best wineries.</p>
+              <p class="font-medium" style="color: #2c3822;">2:00 - 3:30 pm &middot; <a href="https://www.flowerswinery.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Flowers Winery</a></p>
+              <p class="text-sm" style="color: #4d613a;">Sonoma Coast Pinot Noir and Chardonnay in a gorgeous setting among redwood groves.</p>
             </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
+            <div>
+              <p class="font-medium" style="color: #2c3822;">3:30 - 5:00 pm &middot; <a href="https://www.bacchuslanding.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Bacchus Landing</a></p>
+              <p class="text-sm" style="color: #4d613a;">Micro-winery collective with six boutique tasting rooms, bocce courts, and a more casual vibe. Pick 1-2 producers.</p>
+            </div>
+          </div>
+          <div class="pt-3">
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Evening</p>
           </div>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #f2b5a0;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Private Chef Dinner at the AirBnb</p>
-              <p class="text-sm" style="color: #4d613a;">A private chef comes to the house for a proper sit-down dinner. No reservations needed.</p>
+              <p class="font-medium" style="color: #2c3822;">Dinner in Healdsburg</p>
+              <p class="text-sm" style="color: #4d613a;">Restaurant TBD.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #e98c6e;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Night Out at Bars</p>
+              <p class="font-medium" style="color: #2c3822;">Drinks &amp; Bars Afterward</p>
               <p class="text-sm" style="color: #4d613a;">Head into town for cocktails and a night out.</p>
             </div>
           </div>
@@ -379,35 +418,49 @@ tailwind.config = {
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl font-semibold" style="color: #3a5528;">Saturday</span>
           <p class="text-sm mt-1" style="color: #637c49;">June 20</p>
-          <p class="font-medium mt-1" style="color: #2c3822;">River &amp; Wine</p>
+          <p class="font-medium mt-1" style="color: #2c3822;">Kayak &middot; Vineyards &middot; Dinner</p>
         </div>
-        <div class="flex-1 space-y-4">
+        <div class="flex-1 space-y-2">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Morning</p>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #5e8240;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Tubing on the Russian River</p>
-              <p class="text-sm" style="color: #4d613a;">Lazy river float through wine country. The move for a Saturday morning.</p>
+              <p class="font-medium" style="color: #2c3822;">Kayaking or Tubing on the Russian River</p>
+              <p class="text-sm" style="color: #4d613a;">Leaning towards tubing. Lazy river float through wine country.</p>
             </div>
+          </div>
+          <div class="pt-3">
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Late Afternoon</p>
           </div>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Casual Winery Stops &amp; Picnic Lunch</p>
-              <p class="text-sm" style="color: #4d613a;">Hop between a few wineries with a low-key picnic along the way.</p>
+              <p class="font-medium" style="color: #2c3822;">Casual Vineyard with Picnic Seating</p>
+              <p class="text-sm" style="color: #4d613a;"><a href="https://www.dlmwine.com/" target="_blank" rel="noopener noreferrer" class="venue-link">De La Montanya</a> or <a href="https://www.bricoleurvineyards.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Bricoleur Vineyards</a>; outdoor, relaxed vibes with picnic-style seating.</p>
             </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
+            <div>
+              <p class="font-medium" style="color: #2c3822;">Optional Second Tasting or Brewery Stop</p>
+              <p class="text-sm" style="color: #4d613a;">If the group is feeling it.</p>
+            </div>
+          </div>
+          <div class="pt-3">
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Evening</p>
           </div>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #f2b5a0;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Pool Hangs</p>
-              <p class="text-sm" style="color: #4d613a;">Back to the house for more pool time and pre-dinner drinks.</p>
+              <p class="font-medium" style="color: #2c3822;">Dinner in Sonoma or Santa Rosa</p>
+              <p class="text-sm" style="color: #4d613a;">Restaurant TBD.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #3a5528;"></div>
             <div>
-              <p class="font-medium" style="color: #2c3822;">Nice Dinner Out</p>
-              <p class="text-sm" style="color: #4d613a;">The big dinner. Get dressed up for a night out in wine country.</p>
+              <p class="font-medium" style="color: #2c3822;">Chill at Airbnb or Go Out</p>
+              <p class="text-sm" style="color: #4d613a;">Game time decision.</p>
             </div>
           </div>
         </div>
@@ -422,7 +475,8 @@ tailwind.config = {
           <p class="text-sm mt-1" style="color: #637c49;">June 21</p>
           <p class="font-medium mt-1" style="color: #2c3822;">Departure</p>
         </div>
-        <div class="flex-1 space-y-4">
+        <div class="flex-1 space-y-2">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Morning</p>
           <div class="flex gap-4 items-start">
             <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
@@ -595,7 +649,7 @@ const crew = [
   { name: 'Marisa', role: null, photo: 'Marisa.jpg', location: 'Chicago, IL' },
   { name: 'Gina', role: null, photo: 'Gina.jpg', location: 'Chicago, IL' },
   { name: 'Ellie', role: null, photo: 'Ellie.jpg', location: 'New York, NY' },
-  { name: 'Claire', role: null, photo: null, location: 'New York, NY' },
+  { name: 'Claire', role: null, photo: 'Claire.jpg', location: 'New York, NY' },
   { name: 'Allison', role: null, photo: 'Allison.jpg', location: 'Boise, ID' },
   { name: 'Cora', role: null, photo: 'Cora.png', location: 'New York, NY' },
   { name: 'Poonam', role: null, photo: 'Poonam.jpg', location: 'New York, NY' },
