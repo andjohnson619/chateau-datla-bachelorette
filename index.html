@@ -138,10 +138,57 @@ tailwind.config = {
     text-decoration-color: rgba(58,85,40,0.3);
     text-underline-offset: 2px;
     transition: text-decoration-color 0.2s, color 0.2s;
+    position: relative;
   }
   .venue-link:hover {
     color: #3a5528;
     text-decoration-color: #3a5528;
+  }
+
+  .link-preview {
+    position: fixed;
+    z-index: 9998;
+    width: 280px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .link-preview.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .link-preview-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: linear-gradient(135deg, #eef1e8 0%, #dde4d2 100%);
+  }
+  .link-preview-bar {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-top: 1px solid #eef1e8;
+  }
+  .link-preview-bar svg {
+    width: 12px;
+    height: 12px;
+    color: #9ab37e;
+    flex-shrink: 0;
+  }
+  .link-preview-bar span {
+    font-size: 11px;
+    color: #637c49;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   ::-webkit-scrollbar { width: 8px; }
@@ -213,7 +260,7 @@ tailwind.config = {
 <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
 
   <!-- Sky gradient background -->
-  <div class="absolute inset-0" style="background: linear-gradient(180deg, #1a1a2e 0%, #16213e 8%, #0f3460 16%, #533483 26%, #e94560 36%, #f5a623 44%, #f7c948 50%, #e8c170 56%, #cdd4b9 68%, #cdd4b9 100%);"></div>
+  <div class="absolute inset-0" style="background: linear-gradient(180deg, #2a2d45 0%, #3a3d58 8%, #535878 16%, #8e86a8 24%, #c4a8ac 32%, #dbbfad 40%, #e5d2b8 48%, #ddd4b8 56%, #d5d4b9 62%, #cdd4b9 68%, #cdd4b9 100%);"></div>
 
   <!-- Vineyard hills SVG illustration -->
   <svg class="absolute bottom-0 left-0 w-full" style="height: 45%;" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -315,7 +362,7 @@ tailwind.config = {
         <div class="flex-1 space-y-2">
           <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Late Afternoon</p>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #f2b5a0;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Spa Day in Town + Pool Hangs</p>
               <p class="text-sm" style="color: #4d613a;">Totally optional based on your flights. Settle in, unwind, and soak up the Sonoma sun.</p>
@@ -325,7 +372,7 @@ tailwind.config = {
             <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Evening</p>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #3a5528;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Private Dinner at the House</p>
               <p class="text-sm" style="color: #4d613a;">We can get a chef or we can cook; open to group feedback!</p>
@@ -353,14 +400,14 @@ tailwind.config = {
         <div class="flex-1 space-y-2">
           <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Morning / Early Afternoon</p>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #3a5528;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;"><a href="https://www.parks.ca.gov/?page_id=450" target="_blank" rel="noopener noreferrer" class="venue-link">Armstrong Redwoods</a></p>
               <p class="text-sm" style="color: #4d613a;">Easy hike through towering old-growth redwoods. Early wake-up for anyone inclined; only 20 minutes away.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #5e8240;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Large Brunch</p>
               <p class="text-sm" style="color: #4d613a;">Fuel up before the afternoon tastings.</p>
@@ -371,21 +418,21 @@ tailwind.config = {
             <p class="text-xs italic mb-3" style="color: #7d9a5e;">Illustrative; still waiting for reservation windows to open</p>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">12:30 - 2:00 pm &middot; <a href="https://www.aperture-cellars.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Aperture Cellars</a></p>
               <p class="text-sm" style="color: #4d613a;">Bordeaux-style wines in a stunning gallery lounge where wine and art collide.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">2:00 - 3:30 pm &middot; <a href="https://www.flowerswinery.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Flowers Winery</a></p>
               <p class="text-sm" style="color: #4d613a;">Sonoma Coast Pinot Noir and Chardonnay in a gorgeous setting among redwood groves.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">3:30 - 5:00 pm &middot; <a href="https://www.bacchuslanding.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Bacchus Landing</a></p>
               <p class="text-sm" style="color: #4d613a;">Micro-winery collective with six boutique tasting rooms, bocce courts, and a more casual vibe. Pick 1-2 producers.</p>
@@ -395,14 +442,14 @@ tailwind.config = {
             <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Evening</p>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #f2b5a0;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Dinner in Healdsburg</p>
               <p class="text-sm" style="color: #4d613a;">Restaurant TBD.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #e98c6e;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Drinks &amp; Bars Afterward</p>
               <p class="text-sm" style="color: #4d613a;">Head into town for cocktails and a night out.</p>
@@ -423,7 +470,7 @@ tailwind.config = {
         <div class="flex-1 space-y-2">
           <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Morning</p>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #5e8240;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Kayaking or Tubing on the Russian River</p>
               <p class="text-sm" style="color: #4d613a;">Leaning towards tubing. Lazy river float through wine country.</p>
@@ -433,7 +480,7 @@ tailwind.config = {
             <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Late Afternoon</p>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Casual Vineyard with Picnic Seating</p>
               <p class="text-sm" style="color: #4d613a;"><a href="https://www.dlmwine.com/" target="_blank" rel="noopener noreferrer" class="venue-link">De La Montanya</a> or <a href="https://www.bricoleurvineyards.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Bricoleur Vineyards</a>; outdoor, relaxed vibes with picnic-style seating.</p>
@@ -450,14 +497,14 @@ tailwind.config = {
             <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-2" style="color: #637c49;">Evening</p>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #f2b5a0;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Dinner in Sonoma or Santa Rosa</p>
               <p class="text-sm" style="color: #4d613a;">Restaurant TBD.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #3a5528;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Chill at Airbnb or Go Out</p>
               <p class="text-sm" style="color: #4d613a;">Game time decision.</p>
@@ -485,7 +532,7 @@ tailwind.config = {
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <div class="activity-dot mt-1.5" style="background: #7d9a5e;"></div>
+            <div class="activity-dot mt-1.5" style="background: #9ab37e;"></div>
             <div>
               <p class="font-medium" style="color: #2c3822;">Check Out &amp; Fly Home</p>
               <p class="text-sm" style="color: #4d613a;">Pack up and head to the airport. Until next time.</p>
@@ -641,6 +688,54 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+// Link preview tooltip
+(function() {
+  const tooltip = document.createElement('div');
+  tooltip.className = 'link-preview';
+  tooltip.innerHTML = `
+    <img class="link-preview-img" src="" alt="" />
+    <div class="link-preview-bar">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+      <span></span>
+    </div>`;
+  document.body.appendChild(tooltip);
+
+  const img = tooltip.querySelector('.link-preview-img');
+  const urlLabel = tooltip.querySelector('.link-preview-bar span');
+  let hideTimeout;
+
+  function showPreview(link, e) {
+    clearTimeout(hideTimeout);
+    const href = link.href;
+    const domain = new URL(href).hostname.replace('www.', '');
+    urlLabel.textContent = domain;
+    img.src = 'https://image.thum.io/get/width/560/crop/320/noanimate/' + href;
+    img.alt = domain;
+    positionTooltip(e);
+    tooltip.classList.add('visible');
+  }
+
+  function positionTooltip(e) {
+    const pad = 16;
+    let x = e.clientX + pad;
+    let y = e.clientY + pad;
+    if (x + 296 > window.innerWidth) x = e.clientX - 296;
+    if (y + 220 > window.innerHeight) y = e.clientY - 220;
+    tooltip.style.left = x + 'px';
+    tooltip.style.top = y + 'px';
+  }
+
+  function hidePreview() {
+    hideTimeout = setTimeout(() => tooltip.classList.remove('visible'), 120);
+  }
+
+  document.querySelectorAll('.venue-link').forEach(link => {
+    link.addEventListener('mouseenter', (e) => showPreview(link, e));
+    link.addEventListener('mousemove', (e) => positionTooltip(e));
+    link.addEventListener('mouseleave', hidePreview);
+  });
+})();
 
 // Crew
 const crew = [
